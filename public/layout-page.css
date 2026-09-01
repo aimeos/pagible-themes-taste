@@ -29,6 +29,13 @@
         linear-gradient(135deg, var(--pico-background-color), var(--pico-contrast-background));
 }
 
+.cms-content > #find-the-room {
+    background:
+        radial-gradient(circle at 12% 18%, color-mix(in srgb, var(--pico-secondary) 24%, transparent) 0, transparent 26rem),
+        radial-gradient(circle at 92% 82%, var(--pico-contrast-focus) 0, transparent 24rem),
+        linear-gradient(135deg, var(--pico-background-color) 0%, color-mix(in srgb, var(--pico-background-color) 75%, var(--pico-secondary)) 52%, var(--pico-contrast-background) 100%);
+}
+
 .cms-content > .contact {
     background: var(--pico-background-color);
 }

@@ -31,7 +31,7 @@ class TasteDemo extends AbstractDemo
      * @var array<string, array{0: string, 1: string, 2: string}>
      */
     private const PHOTOS = [
-        'broth' => ['photo-1753525808072-1e422963eacd', 'Citrus shio ramen', 'Shio ramen in a black bowl with pork, egg, bamboo shoots and scallions'],
+        'broth' => ['photo-1731460202531-bf8389d565f7', 'Citrus shio ramen', 'Overhead view of a clear noodle broth with egg, sliced meat, vegetables and sesame'],
         'counter' => ['photo-1552566626-52f8b828add9', 'Sumi dining room', 'Warm contemporary restaurant dining room with timber tables and an open counter'],
         'drinks' => ['photo-1551024709-8f23befc6f87', 'Sumi bar drinks', 'Citrus drinks with ice and fresh garnish at a softly lit restaurant bar'],
         'fire' => ['photo-1781160327123-dbb1d77f70ae', 'Sumi open kitchen', 'Restaurant cook working beside stockpots in an open professional kitchen'],
@@ -203,7 +203,7 @@ class TasteDemo extends AbstractDemo
                     ['Sunday', '12:00–16:00', 'Closed'],
                 ],
             ]],
-            ['id' => Utils::uid(), 'type' => 'cards', 'group' => 'main', 'data' => [
+            ['id' => 'find-the-room', 'type' => 'cards', 'group' => 'main', 'data' => [
                 'title' => 'Find the room',
                 'cards' => [
                     ['title' => 'Address', 'text' => "Kastanienallee 48\n10435 Berlin\n\nTwo minutes from U Eberswalder Straße."],
