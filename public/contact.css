@@ -3,42 +3,160 @@
  * @license MIT, https://opensource.org/license/MIT
  */
 
+.cms-content > .contact {
+    background:
+        radial-gradient(circle at 12% 18%, #FF765238 0, transparent 26rem),
+        radial-gradient(circle at 92% 82%, #8B5CF642 0, transparent 24rem),
+        linear-gradient(135deg, #0E2925 0%, #164C42 52%, #282142 100%);
+}
+
+.contact .title {
+    max-width: 52rem;
+    margin: 0 auto clamp(1.75rem, 4vw, 3rem);
+    color: var(--pico-contrast-inverse);
+    text-align: center;
+    text-wrap: balance;
+}
+
 .contact form {
+    position: relative;
     max-width: 52rem;
     margin: auto;
     padding: clamp(1.5rem, 4vw, 3rem);
-    border: 1px solid var(--pico-muted-border-color);
-    border-radius: calc(var(--pico-border-radius) * 1.5);
-    background: var(--pico-background-color);
+    overflow: hidden;
+    border: 1px solid #FFFFFF66;
+    border-radius: calc(var(--pico-border-radius) * 2);
+    background: linear-gradient(145deg, #FFFCF7 0%, #F4F1FF 100%);
+    box-shadow: 0 2rem 5rem #071B1859, 0 0 0 0.5rem #FFFFFF12;
+}
+
+.contact form::before {
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline: 0;
+    height: 0.375rem;
+    background: linear-gradient(90deg, #B73521, #E79A28, #168B75, #6D28D9);
+    content: "";
+}
+
+.contact .grid {
+    gap: 1rem 1.25rem;
+    margin-bottom: 1rem;
 }
 
 .contact label {
-    color: var(--pico-color);
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    color: #173E37;
     font-size: 0.8rem;
     font-weight: 800;
+    letter-spacing: 0.035em;
 }
 
-.contact input,
+.contact input:not([type=hidden]),
 .contact textarea {
-    border-color: var(--pico-muted-border-color);
-    background: var(--pico-contrast-inverse);
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0.9rem 1rem;
+    border: 1px solid #1F6B5C40;
+    border-radius: var(--pico-border-radius);
+    color: #17211D;
+    background: #FFFFFFE6;
+    box-shadow: inset 0 1px 0 #FFFFFF, 0 0.25rem 0.75rem #17211D0A;
 }
 
-.contact input:focus,
+.contact input:not([type=hidden]) {
+    min-height: 3.25rem;
+}
+
+.contact textarea {
+    min-height: 11rem;
+    resize: vertical;
+}
+
+.contact input:not([type=hidden]):hover,
+.contact textarea:hover {
+    border-color: #1F6B5C73;
+}
+
+.contact input:not([type=hidden]):focus,
 .contact textarea:focus {
-    border-color: var(--pico-primary);
-    box-shadow: 0 0 0 0.1875rem var(--pico-primary-background);
+    border-color: #6D5CE7;
+    box-shadow: 0 0 0 0.25rem #6D5CE72B;
+}
+
+.contact input::placeholder,
+.contact textarea::placeholder {
+    color: #67756F;
 }
 
 .contact .submit {
     display: flex;
+    align-items: center;
     justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1.25rem;
+}
+
+.contact .h-captcha iframe {
+    max-width: 100%;
+}
+
+.contact button {
+    min-width: 12rem;
+    margin: 0;
+    border: 0;
+    border-radius: 9999px;
+    color: #FFFFFF;
+    background: linear-gradient(135deg, #B73521, #6D28D9);
+    box-shadow: 0 0.75rem 1.75rem #6D28D933;
+    font-weight: 800;
+}
+
+.contact button:hover,
+.contact button:focus {
+    color: #FFFFFF;
+    background: linear-gradient(135deg, #8F2B18, #5120A6);
+}
+
+.contact button:disabled {
+    color: #66736E;
+    background: #D9DED9;
+    box-shadow: none;
+}
+
+.contact button:has(.success:not(.hidden)) {
+    color: #FFFFFF;
+    background: #146B52;
+}
+
+.contact button:has(.failure:not(.hidden)) {
+    color: #FFFFFF;
+    background: #9F2D22;
 }
 
 .contact .errors:not(:empty) {
-    margin-bottom: 1rem;
+    margin-top: 1rem;
     padding: 1rem;
+    border: 1px solid #B7352140;
     border-radius: var(--pico-border-radius);
-    color: var(--pico-primary-hover);
-    background: var(--pico-primary-background);
+    color: #7E271A;
+    background: #FFE9E3;
+}
+
+.contact .error {
+    border-color: #B73521;
+}
+
+@media (max-width: 767px) {
+    .contact .submit {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .contact .submit > div:last-child,
+    .contact button {
+        width: 100%;
+    }
 }
