@@ -16,27 +16,14 @@
     padding: 0;
 }
 
-.cms-content > .pricing,
-.cms-content > .questions {
-    background:
-        radial-gradient(circle at 85% 15%, var(--pico-contrast-focus) 0, transparent 26rem),
-        linear-gradient(180deg, var(--pico-muted-background-color), var(--pico-background-color));
-}
-
-.cms-content > .image-text {
-    background:
-        radial-gradient(circle at 12% 85%, color-mix(in srgb, var(--pico-secondary) 25%, transparent) 0, transparent 28rem),
-        linear-gradient(135deg, var(--pico-background-color), var(--pico-contrast-background));
-}
-
-.cms-content > #find-the-room {
+.cms-content[data-section=main] > :nth-child(odd):not(.hero) {
     background:
         radial-gradient(circle at 12% 18%, color-mix(in srgb, var(--pico-secondary) 24%, transparent) 0, transparent 26rem),
         radial-gradient(circle at 92% 82%, var(--pico-contrast-focus) 0, transparent 24rem),
         linear-gradient(135deg, var(--pico-background-color) 0%, color-mix(in srgb, var(--pico-background-color) 75%, var(--pico-secondary)) 52%, var(--pico-contrast-background) 100%);
 }
 
-.cms-content > .contact {
+.cms-content[data-section=main] > :nth-child(even):not(.hero) {
     background: var(--pico-background-color);
 }
 

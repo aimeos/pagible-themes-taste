@@ -203,7 +203,7 @@ class TasteDemo extends AbstractDemo
                     ['Sunday', '12:00–16:00', 'Closed'],
                 ],
             ]],
-            ['id' => 'find-the-room', 'type' => 'cards', 'group' => 'main', 'data' => [
+            ['id' => Utils::uid(), 'type' => 'cards', 'group' => 'main', 'data' => [
                 'title' => 'Find the room',
                 'cards' => [
                     ['title' => 'Address', 'text' => "Kastanienallee 48\n10435 Berlin\n\nTwo minutes from U Eberswalder Straße."],
