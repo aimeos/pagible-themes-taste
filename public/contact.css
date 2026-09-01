@@ -1,0 +1,44 @@
+/**
+ * Taste Theme - Contact form
+ * @license MIT, https://opensource.org/license/MIT
+ */
+
+.contact form {
+    max-width: 52rem;
+    margin: auto;
+    padding: clamp(1.5rem, 4vw, 3rem);
+    border: 1px solid var(--pico-muted-border-color);
+    border-radius: calc(var(--pico-border-radius) * 1.5);
+    background: var(--pico-background-color);
+}
+
+.contact label {
+    color: var(--pico-color);
+    font-size: 0.8rem;
+    font-weight: 800;
+}
+
+.contact input,
+.contact textarea {
+    border-color: var(--pico-muted-border-color);
+    background: var(--pico-contrast-inverse);
+}
+
+.contact input:focus,
+.contact textarea:focus {
+    border-color: var(--pico-primary);
+    box-shadow: 0 0 0 0.1875rem var(--pico-primary-background);
+}
+
+.contact .submit {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.contact .errors:not(:empty) {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: var(--pico-border-radius);
+    color: var(--pico-primary-hover);
+    background: var(--pico-primary-background);
+}

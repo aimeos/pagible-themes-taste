@@ -1,0 +1,34 @@
+/**
+ * Taste Theme - Page layout
+ * @license MIT, https://opensource.org/license/MIT
+ */
+
+.cms-content > div {
+    padding: clamp(4rem, 8vw, 7rem) 1rem;
+}
+
+.cms-content > .hero {
+    padding-block: 1rem;
+}
+
+.cms-content > .hero > .container {
+    max-width: 1280px !important;
+    padding: 0;
+}
+
+.cms-content > .pricing,
+.cms-content > .questions {
+    background: var(--pico-muted-background-color);
+}
+
+.cms-content > .image-text {
+    background: #EFE5D6;
+}
+
+.cms-content > .contact {
+    background: var(--pico-contrast-inverse);
+}
+
+.cms-content > :last-child:not(.hero) {
+    padding-bottom: clamp(5rem, 9vw, 8rem);
+}

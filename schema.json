@@ -1,0 +1,94 @@
+{
+    "label": "Taste",
+    "description": "Modern restaurant design with bold food photography, warm mineral surfaces, coral accents, deep green contrast and no motion effects",
+    "maintainer": "Aimeos",
+    "email": "info@aimeos.org",
+    "website": "https://pagible.com",
+    "types": {
+        "page": {
+            "sections": ["main", "footer"]
+        },
+        "docs": {
+            "sections": ["main", "footer"]
+        },
+        "blog": {
+            "sections": ["main", "footer"]
+        }
+    },
+    "config": {
+        "theme": {
+            "group": "theme",
+            "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M8.1 13.34 10.93 10.5 3.91 3.5l-1.4 1.41 4.94 4.94L4.62 12.7l3.48.64M14.88 11.53c1.53 0 2.72-1.19 2.72-2.72 0-.7-.28-1.4-.77-1.89L12.8 2.9l-1.41 1.41 2.33 2.33-8.49 8.49 1.41 1.41 4.25-4.24 2.58 2.58 1.41-1.41-2.58-2.58.69-.69c.49.84 1.19 1.33 1.89 1.33M16.92 14c-.53 0-1.04.21-1.41.59L9.1 21H14l4.33-4.33A1.54 1.54 0 0 0 16.92 14Z\"/></svg>",
+            "fields": {
+                "--pico-font-family-sans-serif": {
+                    "type": "string",
+                    "default": "ui-rounded, 'Avenir Next', 'Segoe UI', sans-serif"
+                },
+                "--pico-color": {
+                    "type": "color",
+                    "default": "#17211D"
+                },
+                "--pico-background-color": {
+                    "type": "color",
+                    "default": "#F6F4EC"
+                },
+                "--pico-text-selection-color": {
+                    "type": "color",
+                    "default": "#FF6B4A33"
+                },
+                "--pico-contrast": {
+                    "type": "color",
+                    "default": "#17211D"
+                },
+                "--pico-contrast-hover": {
+                    "type": "color",
+                    "default": "#07110D"
+                },
+                "--pico-contrast-inverse": {
+                    "type": "color",
+                    "default": "#FCFBF7"
+                },
+                "--pico-primary": {
+                    "type": "color",
+                    "default": "#B43B22"
+                },
+                "--pico-primary-background": {
+                    "type": "color",
+                    "default": "#B43B2214"
+                },
+                "--pico-primary-hover": {
+                    "type": "color",
+                    "default": "#8F2B18"
+                },
+                "--pico-primary-hover-background": {
+                    "type": "color",
+                    "default": "#8F2B1814"
+                },
+                "--pico-secondary": {
+                    "type": "color",
+                    "default": "#1F6B5C"
+                },
+                "--pico-secondary-background": {
+                    "type": "color",
+                    "default": "#1F6B5C14"
+                },
+                "--pico-secondary-hover": {
+                    "type": "color",
+                    "default": "#155044"
+                },
+                "--pico-secondary-hover-background": {
+                    "type": "color",
+                    "default": "#15504414"
+                },
+                "--pico-border-radius": {
+                    "type": "string",
+                    "default": "1rem"
+                },
+                "--pico-nav-breadcrumb-divider": {
+                    "type": "string",
+                    "default": "/"
+                }
+            }
+        }
+    }
+}

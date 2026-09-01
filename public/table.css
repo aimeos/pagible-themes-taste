@@ -1,0 +1,46 @@
+/**
+ * Taste Theme - Tables
+ * @license MIT, https://opensource.org/license/MIT
+ */
+
+.table-responsive {
+    overflow: hidden;
+    border: 1px solid var(--pico-muted-border-color);
+    border-radius: calc(var(--pico-border-radius) * 1.5);
+    background: var(--pico-contrast-inverse);
+}
+
+.table-row {
+    display: flex;
+    border-bottom: 1px solid var(--pico-muted-border-color);
+}
+
+.table-row:last-child {
+    border-bottom: 0;
+}
+
+.table-col {
+    flex: 1;
+    padding: 1rem;
+}
+
+.table-col.th {
+    color: var(--pico-color);
+    background: var(--pico-muted-background-color);
+    font-weight: 800;
+}
+
+.table-col.td {
+    color: var(--pico-muted-color);
+}
+
+@media (max-width: 576px) {
+    .table-row {
+        flex-wrap: wrap;
+    }
+
+    .table-col:first-child {
+        flex: 0 0 100%;
+        font-weight: 800;
+    }
+}
