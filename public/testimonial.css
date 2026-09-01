@@ -12,9 +12,12 @@
 .testimonial-item {
     margin: 0;
     padding: 1.75rem;
-    border: 1px solid var(--pico-muted-border-color);
+    border: 1px solid transparent;
     border-radius: calc(var(--pico-border-radius) * 1.5);
-    background: var(--pico-contrast-inverse);
+    background:
+        linear-gradient(145deg, #121B28, #181427) padding-box,
+        linear-gradient(135deg, #FF6B7A4D, #8B5CF64D, #39D6B44D) border-box;
+    box-shadow: 0 1.25rem 3rem #00000040;
 }
 
 .testimonial-item blockquote {

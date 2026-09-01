@@ -18,15 +18,19 @@
 
 .cms-content > .pricing,
 .cms-content > .questions {
-    background: var(--pico-muted-background-color);
+    background:
+        radial-gradient(circle at 85% 15%, #34215B33 0, transparent 26rem),
+        linear-gradient(180deg, #101824, #0C131D);
 }
 
 .cms-content > .image-text {
-    background: #EFE5D6;
+    background:
+        radial-gradient(circle at 12% 85%, #155E5540 0, transparent 28rem),
+        linear-gradient(135deg, #0D171F, #111525);
 }
 
 .cms-content > .contact {
-    background: var(--pico-contrast-inverse);
+    background: #0B121B;
 }
 
 .cms-content > :last-child:not(.hero) {

@@ -8,7 +8,7 @@ dialog > article {
     overflow: hidden;
     border: 1px solid var(--pico-muted-border-color);
     border-radius: calc(var(--pico-border-radius) * 2);
-    background: var(--pico-contrast-inverse);
+    background: #0E1621;
 }
 
 dialog header {
@@ -24,8 +24,8 @@ dialog form {
 dialog input,
 dialog button {
     margin: 0;
-    color: var(--pico-contrast);
-    background: var(--pico-contrast-inverse);
+    color: var(--pico-color);
+    background: #090F18;
 }
 
 dialog input {
@@ -97,7 +97,10 @@ pre:has(code[class*="language-"]) {
 
 footer.cms-content {
     color: var(--pico-contrast-inverse);
-    background: var(--pico-secondary-hover);
+    background:
+        radial-gradient(circle at 15% 20%, #39D6B426 0, transparent 24rem),
+        radial-gradient(circle at 90% 80%, #8B5CF633 0, transparent 28rem),
+        linear-gradient(135deg, #060A10, #0C201E 58%, #1A1125);
 }
 
 footer.cms-content > div {
@@ -136,7 +139,8 @@ footer.cms-content .cards .cms-text a {
     color: var(--pico-contrast-inverse);
 }
 
-footer.cms-content .cards .cms-text p {
+footer.cms-content .cards .cms-text p,
+footer.cms-content .cards .cms-text li {
     color: inherit;
 }
 
@@ -170,13 +174,13 @@ footer.cms-content a:visited {
 }
 
 footer.cms-content a:hover {
-    color: #FF9A82;
+    color: var(--pico-secondary);
 }
 
 footer.bottom {
     margin: 0;
-    color: #FCFBF7B3;
-    background: var(--pico-secondary-hover);
+    color: #C5D0DCB3;
+    background: #060A10;
     font-size: 0.75rem;
 }
 
@@ -184,7 +188,7 @@ footer.bottom .container {
     max-width: 1200px;
     margin: auto;
     padding: 1.5rem 1rem;
-    border-top: 1px solid #FCFBF733;
+    border-top: 1px solid #DDEBFF26;
 }
 
 @media (min-width: 768px) {

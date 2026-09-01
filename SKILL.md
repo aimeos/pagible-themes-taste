@@ -1,6 +1,6 @@
 ---
 name: taste
-description: Modern restaurant and hospitality design with bold food photography, rounded editorial layouts, warm mineral surfaces, coral and deep-green accents, and no motion effects.
+description: Modern restaurant and hospitality design with bold food photography, rounded editorial layouts, layered midnight surfaces, vivid coral, emerald and violet accents, and no motion effects.
 license: MIT
 metadata:
   author: Aimeos
@@ -17,7 +17,7 @@ Use an image-led restaurant layout that feels current, welcoming and useful. Pri
 - Use only the markup and classes supplied by `./theme/views/`.
 - Use system fonts and the existing `--pico-*` variables.
 - Keep page content within a `1280px` maximum width.
-- Use warm limestone backgrounds, deep-green contrast surfaces and coral actions.
+- Use midnight backgrounds, layered dark surfaces, emerald structure, coral actions and restrained violet highlights.
 - Keep major images generously rounded and tightly cropped around food, drinks or the room.
 - Do not add animations, transitions, parallax, autoplay effects or smooth scrolling.
 
@@ -27,7 +27,7 @@ Use an image-led restaurant layout that feels current, welcoming and useful. Pri
 - Menu: use pricing cards or tables with the dish name, a brief description and an immediately visible price.
 - Story: use image-text blocks with concrete details about ingredients, people and preparation.
 - Visit: make address, hours, phone and booking action easy to scan.
-- Footer: use the dark-green surface for navigation and contact details.
+- Footer: use the deepest midnight surface with restrained emerald and violet light for navigation and contact details.
 
 ## Accessibility
 

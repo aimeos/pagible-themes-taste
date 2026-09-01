@@ -11,9 +11,12 @@
 .questions details {
     margin-bottom: 0.75rem;
     padding: 0;
-    border: 1px solid var(--pico-muted-border-color);
+    border: 1px solid transparent;
     border-radius: var(--pico-border-radius);
-    background: var(--pico-contrast-inverse);
+    background:
+        linear-gradient(145deg, #131D2A, #171525) padding-box,
+        linear-gradient(120deg, #39D6B440, #8B5CF64D) border-box;
+    box-shadow: 0 0.75rem 2rem #00000033;
 }
 
 .questions summary {
@@ -38,7 +41,7 @@
 .questions summary svg {
     flex: 0 0 auto;
     width: 1.15rem;
-    color: var(--pico-primary);
+    color: var(--pico-secondary);
 }
 
 .questions details[open] summary svg {

@@ -11,10 +11,12 @@
 
 .cards .card-item {
     overflow: hidden;
-    border: 1px solid var(--pico-muted-border-color);
+    border: 1px solid transparent;
     border-radius: calc(var(--pico-border-radius) * 1.5);
-    background: var(--pico-contrast-inverse);
-    box-shadow: 0 1rem 2.5rem #17211D0F;
+    background:
+        linear-gradient(145deg, #121B28, #181427) padding-box,
+        linear-gradient(135deg, #39D6B466, #8B5CF666, #FF6B7A66) border-box;
+    box-shadow: 0 1.25rem 3rem #0000004D;
 }
 
 .cards .card-item picture,

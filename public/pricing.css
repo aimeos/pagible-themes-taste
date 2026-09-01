@@ -21,13 +21,19 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    border: 1px solid var(--pico-muted-border-color);
+    border: 1px solid transparent;
     border-radius: calc(var(--pico-border-radius) * 1.5);
-    background: var(--pico-contrast-inverse);
+    background:
+        linear-gradient(150deg, #121B28, #171426) padding-box,
+        linear-gradient(135deg, #39D6B44D, #8B5CF64D) border-box;
+    box-shadow: 0 1.25rem 3rem #00000040;
 }
 
 .pricing-item.highlight {
-    border: 0.1875rem solid var(--pico-primary);
+    border: 0.1875rem solid transparent;
+    background:
+        linear-gradient(150deg, #171926, #1F1328) padding-box,
+        linear-gradient(135deg, var(--pico-primary), #8B5CF6) border-box;
 }
 
 .pricing-item .badge {
@@ -81,7 +87,7 @@
 .pricing-header .price {
     grid-column: 2;
     grid-row: 1;
-    color: var(--pico-primary);
+    color: var(--pico-secondary);
     font-size: 1.15rem;
     font-weight: 900;
     white-space: nowrap;

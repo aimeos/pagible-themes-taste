@@ -11,7 +11,11 @@
     overflow: hidden;
     border-radius: calc(var(--pico-border-radius) * 2);
     color: var(--pico-contrast-inverse);
-    background: var(--pico-secondary-hover);
+    background:
+        radial-gradient(circle at 20% 15%, #39D6B42E 0, transparent 22rem),
+        radial-gradient(circle at 70% 90%, #8B5CF63D 0, transparent 28rem),
+        linear-gradient(145deg, #0D1721, #12362F 55%, #21182F);
+    box-shadow: 0 2rem 5rem #00000059;
 }
 
 .hero .first {
@@ -21,7 +25,7 @@
 
 .hero .subtitle {
     margin-bottom: 1.25rem;
-    color: #FF9A82;
+    color: var(--pico-secondary);
     font-size: 0.75rem;
     font-weight: 800;
     letter-spacing: 0.16em;
@@ -36,7 +40,7 @@
 
 .hero .cms-text {
     max-width: 36rem;
-    color: #FCFBF7D9;
+    color: #D5DFE9;
     font-size: clamp(1rem, 1.5vw, 1.2rem);
     line-height: 1.65;
 }
@@ -53,7 +57,7 @@
 }
 
 .hero .actions .btn {
-    border-color: #FCFBF766;
+    border-color: #DDEBFF66;
     color: var(--pico-contrast-inverse);
     background: transparent;
 }
@@ -62,6 +66,12 @@
     border-color: var(--pico-primary);
     color: var(--pico-primary-inverse);
     background: var(--pico-primary);
+}
+
+.hero .actions .btn:not(:first-child):hover {
+    border-color: var(--pico-secondary);
+    color: var(--pico-secondary);
+    background: #39D6B414;
 }
 
 .hero .second {

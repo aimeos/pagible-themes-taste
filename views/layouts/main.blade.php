@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js" data-theme="light" lang="{{ cms($page, 'lang') }}" dir="{{ in_array(cms($page, 'lang'), ['ar', 'az', 'dv', 'fa', 'he', 'ku', 'ur']) ? 'rtl' : 'ltr' }}">
+<html class="no-js" data-theme="dark" lang="{{ cms($page, 'lang') }}" dir="{{ in_array(cms($page, 'lang'), ['ar', 'az', 'dv', 'fa', 'he', 'ku', 'ur']) ? 'rtl' : 'ltr' }}">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,7 +20,7 @@
             ">
         @endif
 
-        <meta name="theme-color" content="{{ cms($page, 'config.theme.data.--pico-background-color') ?: '#F6F4EC' }}">
+        <meta name="theme-color" content="{{ cms($page, 'config.theme.data.--pico-background-color') ?: '#090D14' }}">
 
         <title>{{ cms($page, 'title') }}</title>
 
