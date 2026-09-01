@@ -234,8 +234,8 @@ class TasteDemo extends AbstractDemo
                 ],
             ]],
             ['id' => Utils::uid(), 'type' => 'map', 'group' => 'main', 'data' => [
-                'title' => 'Find the room',
-                'text' => "**Address**  \nKastanienallee 48 · 10435 Berlin  \nTwo minutes from U Eberswalder Straße.\n\n**Call**  \n+49 30 555 01 48 · answered Tuesday to Saturday from 11:00.\n\nFor eight to sixteen guests, the back table can be served family-style with advance notice.",
+                'title' => 'Find Us',
+                'text' => "**Address**\nKastanienallee 48 · 10435 Berlin\nTwo minutes from U Eberswalder Straße.\n\n**Call**\n+49 30 555 01 48 · answered Tuesday to Saturday from 11:00.\n\nFor eight to sixteen guests, the back table can be served family-style with advance notice.",
                 'location' => [
                     'latitude' => 52.538456,
                     'longitude' => 13.409564,
