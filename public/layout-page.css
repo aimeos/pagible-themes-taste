@@ -19,18 +19,18 @@
 .cms-content > .pricing,
 .cms-content > .questions {
     background:
-        radial-gradient(circle at 85% 15%, #34215B33 0, transparent 26rem),
-        linear-gradient(180deg, #101824, #0C131D);
+        radial-gradient(circle at 85% 15%, var(--pico-contrast-focus) 0, transparent 26rem),
+        linear-gradient(180deg, var(--pico-muted-background-color), var(--pico-background-color));
 }
 
 .cms-content > .image-text {
     background:
-        radial-gradient(circle at 12% 85%, #155E5540 0, transparent 28rem),
-        linear-gradient(135deg, #0D171F, #111525);
+        radial-gradient(circle at 12% 85%, color-mix(in srgb, var(--pico-secondary) 25%, transparent) 0, transparent 28rem),
+        linear-gradient(135deg, var(--pico-background-color), var(--pico-contrast-background));
 }
 
 .cms-content > .contact {
-    background: #0B121B;
+    background: var(--pico-background-color);
 }
 
 .cms-content > :last-child:not(.hero) {

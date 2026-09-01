@@ -8,7 +8,7 @@ dialog > article {
     overflow: hidden;
     border: 1px solid var(--pico-muted-border-color);
     border-radius: calc(var(--pico-border-radius) * 2);
-    background: #0E1621;
+    background: var(--pico-muted-background-color);
 }
 
 dialog header {
@@ -25,7 +25,7 @@ dialog input,
 dialog button {
     margin: 0;
     color: var(--pico-color);
-    background: #090F18;
+    background: var(--pico-background-color);
 }
 
 dialog input {
@@ -98,9 +98,9 @@ pre:has(code[class*="language-"]) {
 footer.cms-content {
     color: var(--pico-contrast-inverse);
     background:
-        radial-gradient(circle at 15% 20%, #39D6B426 0, transparent 24rem),
-        radial-gradient(circle at 90% 80%, #8B5CF633 0, transparent 28rem),
-        linear-gradient(135deg, #060A10, #0C201E 58%, #1A1125);
+        radial-gradient(circle at 15% 20%, color-mix(in srgb, var(--pico-secondary) 15%, transparent) 0, transparent 24rem),
+        radial-gradient(circle at 90% 80%, var(--pico-contrast-focus) 0, transparent 28rem),
+        linear-gradient(135deg, var(--pico-code-background-color), color-mix(in srgb, var(--pico-background-color) 75%, var(--pico-secondary)) 58%, var(--pico-contrast-background));
 }
 
 footer.cms-content > div {
@@ -179,8 +179,8 @@ footer.cms-content a:hover {
 
 footer.bottom {
     margin: 0;
-    color: #C5D0DCB3;
-    background: #060A10;
+    color: color-mix(in srgb, var(--pico-color) 70%, transparent);
+    background: var(--pico-code-background-color);
     font-size: 0.75rem;
 }
 
@@ -188,7 +188,7 @@ footer.bottom .container {
     max-width: 1200px;
     margin: auto;
     padding: 1.5rem 1rem;
-    border-top: 1px solid #DDEBFF26;
+    border-top: 1px solid var(--pico-muted-border-color);
 }
 
 @media (min-width: 768px) {

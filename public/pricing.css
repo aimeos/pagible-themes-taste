@@ -24,16 +24,17 @@
     border: 1px solid transparent;
     border-radius: calc(var(--pico-border-radius) * 1.5);
     background:
-        linear-gradient(150deg, #121B28, #171426) padding-box,
-        linear-gradient(135deg, #39D6B44D, #8B5CF64D) border-box;
-    box-shadow: 0 1.25rem 3rem #00000040;
+        linear-gradient(150deg, var(--pico-dropdown-background-color), var(--pico-contrast-background)) padding-box,
+        linear-gradient(135deg, var(--pico-secondary-focus), var(--pico-contrast-focus)) border-box;
+    box-shadow: var(--pico-box-shadow);
 }
 
 .pricing-item.highlight {
-    border: 0.1875rem solid transparent;
+    border: 1px solid transparent;
     background:
-        linear-gradient(150deg, #171926, #1F1328) padding-box,
-        linear-gradient(135deg, var(--pico-primary), #8B5CF6) border-box;
+        linear-gradient(150deg, var(--pico-contrast-background), var(--pico-dropdown-hover-background-color)) padding-box,
+        linear-gradient(135deg, var(--pico-primary), var(--pico-secondary)) border-box;
+    box-shadow: 0 0 0 0.125rem var(--pico-primary-focus), var(--pico-box-shadow);
 }
 
 .pricing-item .badge {
@@ -53,6 +54,8 @@
 
 .pricing-item picture {
     display: block;
+    flex: 0 0 auto;
+    width: 100%;
     aspect-ratio: 4 / 3;
     overflow: hidden;
 }
@@ -62,6 +65,7 @@
     height: 100%;
     border-radius: 0;
     object-fit: cover;
+    object-position: center;
 }
 
 .pricing-header,

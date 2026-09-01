@@ -5,9 +5,9 @@
 
 .cms-content > .contact {
     background:
-        radial-gradient(circle at 12% 18%, #39D6B43D 0, transparent 26rem),
-        radial-gradient(circle at 92% 82%, #8B5CF64D 0, transparent 24rem),
-        linear-gradient(135deg, #09131A 0%, #12352F 52%, #21162E 100%);
+        radial-gradient(circle at 12% 18%, color-mix(in srgb, var(--pico-secondary) 24%, transparent) 0, transparent 26rem),
+        radial-gradient(circle at 92% 82%, var(--pico-contrast-focus) 0, transparent 24rem),
+        linear-gradient(135deg, var(--pico-background-color) 0%, color-mix(in srgb, var(--pico-background-color) 75%, var(--pico-secondary)) 52%, var(--pico-contrast-background) 100%);
 }
 
 .contact .title {
@@ -24,19 +24,10 @@
     margin: auto;
     padding: clamp(1.5rem, 4vw, 3rem);
     overflow: hidden;
-    border: 1px solid #DDEBFF38;
+    border: 1px solid var(--pico-contrast-border);
     border-radius: calc(var(--pico-border-radius) * 2);
-    background: linear-gradient(145deg, #111D29F2 0%, #181326F2 100%);
-    box-shadow: 0 2rem 5rem #00000066, 0 0 0 0.5rem #FFFFFF0A;
-}
-
-.contact form::before {
-    position: absolute;
-    inset-block-start: 0;
-    inset-inline: 0;
-    height: 0.375rem;
-    background: linear-gradient(90deg, #FF6B7A, #F5B94C, #39D6B4, #8B5CF6);
-    content: "";
+    background: linear-gradient(145deg, color-mix(in srgb, var(--pico-dropdown-background-color) 95%, transparent) 0%, color-mix(in srgb, var(--pico-contrast-background) 95%, transparent) 100%);
+    box-shadow: 0 2rem 5rem color-mix(in srgb, var(--pico-code-background-color) 40%, transparent), 0 0 0 0.5rem color-mix(in srgb, var(--pico-contrast-hover) 4%, transparent);
 }
 
 .contact .grid {
@@ -47,7 +38,7 @@
 .contact label {
     display: inline-block;
     margin-bottom: 0.5rem;
-    color: #DCE6EF;
+    color: var(--pico-code-color);
     font-size: 0.8rem;
     font-weight: 800;
     letter-spacing: 0.035em;
@@ -59,11 +50,11 @@
     width: 100%;
     margin: 0;
     padding: 0.9rem 1rem;
-    border: 1px solid #B6C8DD38;
+    border: 1px solid var(--pico-contrast-border);
     border-radius: var(--pico-border-radius);
-    color: #F1F5F9;
-    background: #080D14B8;
-    box-shadow: inset 0 1px 0 #FFFFFF0F, 0 0.25rem 0.75rem #00000029;
+    color: var(--pico-contrast);
+    background: color-mix(in srgb, var(--pico-background-color) 72%, transparent);
+    box-shadow: inset 0 1px 0 color-mix(in srgb, var(--pico-contrast-hover) 6%, transparent), 0 0.25rem 0.75rem color-mix(in srgb, var(--pico-code-background-color) 16%, transparent);
 }
 
 .contact input:not([type=hidden]) {
@@ -77,18 +68,18 @@
 
 .contact input:not([type=hidden]):hover,
 .contact textarea:hover {
-    border-color: #39D6B480;
+    border-color: color-mix(in srgb, var(--pico-secondary) 50%, transparent);
 }
 
 .contact input:not([type=hidden]):focus,
 .contact textarea:focus {
-    border-color: #8B5CF6;
-    box-shadow: 0 0 0 0.25rem #8B5CF633;
+    border-color: var(--pico-secondary);
+    box-shadow: 0 0 0 0.25rem var(--pico-secondary-focus);
 }
 
 .contact input::placeholder,
 .contact textarea::placeholder {
-    color: #8493A3;
+    color: var(--pico-muted-color);
 }
 
 .contact .submit {
@@ -108,45 +99,45 @@
     margin: 0;
     border: 0;
     border-radius: 9999px;
-    color: #FFFFFF;
-    background: linear-gradient(135deg, #D13A50, #6D35D8);
-    box-shadow: 0 0.75rem 1.75rem #6D35D84D;
+    color: var(--pico-contrast-hover);
+    background: linear-gradient(135deg, color-mix(in srgb, var(--pico-primary) 65%, var(--pico-background-color)), color-mix(in srgb, var(--pico-secondary) 55%, var(--pico-background-color)));
+    box-shadow: 0 0.75rem 1.75rem var(--pico-secondary-focus);
     font-weight: 800;
 }
 
 .contact button:hover,
 .contact button:focus {
-    color: #FFFFFF;
-    background: linear-gradient(135deg, #C1344A, #8451E8);
+    color: var(--pico-contrast-hover);
+    background: linear-gradient(135deg, color-mix(in srgb, var(--pico-primary-hover) 60%, var(--pico-background-color)), color-mix(in srgb, var(--pico-secondary-hover) 45%, var(--pico-background-color)));
 }
 
 .contact button:disabled {
-    color: #8895A3;
-    background: #273241;
+    color: var(--pico-muted-color);
+    background: var(--pico-contrast-hover-background);
     box-shadow: none;
 }
 
 .contact button:has(.success:not(.hidden)) {
-    color: #FFFFFF;
-    background: #147A63;
+    color: var(--pico-contrast-hover);
+    background: color-mix(in srgb, var(--pico-secondary) 55%, var(--pico-background-color));
 }
 
 .contact button:has(.failure:not(.hidden)) {
-    color: #FFFFFF;
-    background: #A52F42;
+    color: var(--pico-contrast-hover);
+    background: color-mix(in srgb, var(--pico-primary) 65%, var(--pico-background-color));
 }
 
 .contact .errors:not(:empty) {
     margin-top: 1rem;
     padding: 1rem;
-    border: 1px solid #FF6B7A59;
+    border: 1px solid color-mix(in srgb, var(--pico-primary) 35%, transparent);
     border-radius: var(--pico-border-radius);
-    color: #FFC1C8;
-    background: #4A152033;
+    color: var(--pico-primary-hover);
+    background: var(--pico-primary-background);
 }
 
 .contact .error {
-    border-color: #FF6B7A;
+    border-color: var(--pico-primary);
 }
 
 @media (max-width: 767px) {

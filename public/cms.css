@@ -13,33 +13,33 @@
     --pico-nav-element-spacing-vertical: 0.75rem;
     --pico-color: #E7EEF5;
     --pico-background-color: #090D14;
-    --pico-text-selection-color: #FF6B7A4D;
+    --pico-text-selection-color: color-mix(in srgb, var(--pico-primary) 30%, transparent);
     --pico-muted-color: #A5B2C1;
-    --pico-muted-border-color: #B6C8DD29;
+    --pico-muted-border-color: color-mix(in srgb, var(--pico-muted-color) 16%, transparent);
     --pico-muted-background-color: #141D2A;
     --pico-contrast: #F7FAFC;
-    --pico-contrast-border: #DDEBFF38;
+    --pico-contrast-border: color-mix(in srgb, var(--pico-contrast) 22%, transparent);
     --pico-contrast-background: #192433;
     --pico-contrast-hover: #FFFFFF;
-    --pico-contrast-hover-border: #DDEBFF66;
+    --pico-contrast-hover-border: color-mix(in srgb, var(--pico-contrast-hover) 40%, transparent);
     --pico-contrast-hover-background: #253449;
     --pico-contrast-focus: #8B5CF64D;
     --pico-contrast-inverse: #F7FAFC;
     --pico-primary: #FF6B7A;
-    --pico-primary-background: #FF6B7A1F;
+    --pico-primary-background: color-mix(in srgb, var(--pico-primary) 12%, transparent);
     --pico-primary-border: var(--pico-primary);
     --pico-primary-hover: #FF93A0;
-    --pico-primary-hover-background: #FF93A026;
+    --pico-primary-hover-background: color-mix(in srgb, var(--pico-primary-hover) 15%, transparent);
     --pico-primary-hover-border: var(--pico-primary-hover);
-    --pico-primary-focus: #FF6B7A4D;
+    --pico-primary-focus: color-mix(in srgb, var(--pico-primary) 30%, transparent);
     --pico-primary-inverse: #1A0C12;
     --pico-secondary: #39D6B4;
-    --pico-secondary-background: #39D6B41F;
+    --pico-secondary-background: color-mix(in srgb, var(--pico-secondary) 12%, transparent);
     --pico-secondary-border: var(--pico-secondary);
     --pico-secondary-hover: #70E8CF;
-    --pico-secondary-hover-background: #70E8CF26;
+    --pico-secondary-hover-background: color-mix(in srgb, var(--pico-secondary-hover) 15%, transparent);
     --pico-secondary-hover-border: var(--pico-secondary-hover);
-    --pico-secondary-focus: #39D6B44D;
+    --pico-secondary-focus: color-mix(in srgb, var(--pico-secondary) 30%, transparent);
     --pico-secondary-inverse: #071713;
     --pico-h1-color: #F8FAFC;
     --pico-h2-color: #F8FAFC;
@@ -47,13 +47,13 @@
     --pico-h4-color: #E7EEF5;
     --pico-h5-color: #CCD7E2;
     --pico-h6-color: #A5B2C1;
-    --pico-box-shadow: 0 1.5rem 4rem #00000052;
+    --pico-box-shadow: 0 1.5rem 4rem color-mix(in srgb, var(--pico-code-background-color) 32%, transparent);
     --pico-dropdown-color: var(--pico-color);
     --pico-dropdown-border-color: var(--pico-muted-border-color);
     --pico-dropdown-background-color: #111925;
     --pico-dropdown-hover-background-color: #1B293A;
-    --pico-dropdown-box-shadow: 0 1rem 2.5rem #00000066;
-    --pico-modal-overlay-background-color: #03060ACC;
+    --pico-dropdown-box-shadow: 0 1rem 2.5rem color-mix(in srgb, var(--pico-code-background-color) 40%, transparent);
+    --pico-modal-overlay-background-color: color-mix(in srgb, var(--pico-code-background-color) 80%, transparent);
     --pico-code-background-color: #05080D;
     --pico-code-color: #DDE8F1;
     --pico-border-radius: 1rem;
@@ -76,8 +76,8 @@
 
 body {
     background:
-        radial-gradient(circle at 10% 0%, #123C3A66 0, transparent 32rem),
-        radial-gradient(circle at 90% 20%, #35225F4D 0, transparent 36rem),
+        radial-gradient(circle at 10% 0%, color-mix(in srgb, var(--pico-secondary) 25%, transparent) 0, transparent 32rem),
+        radial-gradient(circle at 90% 20%, var(--pico-contrast-focus) 0, transparent 36rem),
         var(--pico-background-color);
     font-family: var(--pico-font-family-sans-serif);
 }
@@ -120,7 +120,7 @@ body > header {
     position: sticky;
     inset-block-start: 0;
     z-index: 100;
-    background: #090D14EB;
+    background: color-mix(in srgb, var(--pico-background-color) 92%, transparent);
     backdrop-filter: blur(1.25rem);
 }
 
@@ -300,7 +300,7 @@ header nav .sidebar-close button {
 
 nav.breadcrumb {
     border-bottom: 1px solid var(--pico-muted-border-color);
-    background: #0D141F;
+    background: var(--pico-dropdown-background-color);
 }
 
 nav.breadcrumb > ul {

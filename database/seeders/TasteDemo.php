@@ -21,8 +21,8 @@ class TasteDemo extends AbstractDemo
     /** @var array<string, string> Meta descriptions keyed by page path */
     private const DESCRIPTIONS = [
         'kitchen' => 'Meet the cooks and suppliers behind Sumi, a modern neighborhood noodle bar built around slow broth, live fire and seasonal produce.',
-        'menu' => 'Explore Sumi noodle bowls, small plates, soft drinks, sake and highballs, with clear vegetarian and dietary notes.',
-        'visit' => 'Find Sumi noodle bar, check current opening hours and send a table or group dining request.',
+        'menu' => "Explore Sumi's noodle bowls, grilled small plates, sake and highballs on Kastanienallee in Prenzlauer Berg, with vegetarian and allergen notes.",
+        'visit' => "Find Sumi at Kastanienallee 48 in Berlin's Prenzlauer Berg, check Tuesday–Sunday opening hours, and send a table or group dining request.",
     ];
 
     /**
@@ -31,11 +31,13 @@ class TasteDemo extends AbstractDemo
      * @var array<string, array{0: string, 1: string, 2: string}>
      */
     private const PHOTOS = [
-        'broth' => ['photo-1690004183239-387fd459a8fc', 'Citrus shio ramen', 'Clear noodle broth with egg, pork, scallions and sesame in a ceramic bowl'],
+        'broth' => ['photo-1753525808072-1e422963eacd', 'Citrus shio ramen', 'Shio ramen in a black bowl with pork, egg, bamboo shoots and scallions'],
         'counter' => ['photo-1552566626-52f8b828add9', 'Sumi dining room', 'Warm contemporary restaurant dining room with timber tables and an open counter'],
         'drinks' => ['photo-1551024709-8f23befc6f87', 'Sumi bar drinks', 'Citrus drinks with ice and fresh garnish at a softly lit restaurant bar'],
         'fire' => ['photo-1781160327123-dbb1d77f70ae', 'Sumi open kitchen', 'Restaurant cook working beside stockpots in an open professional kitchen'],
         'miso' => ['photo-1772217261042-0175d0b2fcb0', 'Charred miso ramen', 'Rich ramen with pork, noodles, egg, seaweed and aromatic broth'],
+        'sake' => ['photo-1756260853158-a63f71b4bff6', 'Junmai sake', 'Black Junmai sake bottle with a clear tasting glass on a dark table'],
+        'sencha' => ['photo-1767840272016-36dc5dd51f79', 'Cold-brew sencha', 'Clear green tea beside fresh sencha leaves in a glass pot on a wooden counter'],
         'tofu' => ['photo-1769031240699-e15f4818224a', 'Roasted tofu ramen', 'Plant-based ramen with crisp tofu, vegetables, seaweed and citrus'],
         'plates' => ['photo-1504674900247-0877df9cc836', 'Sumi sharing plates', 'Colorful small plates arranged for sharing across a restaurant table'],
         'team' => ['photo-1764408182167-043042cb086e', 'Sumi kitchen team', 'Two restaurant cooks plating a bowl together at the kitchen pass'],
@@ -146,15 +148,15 @@ class TasteDemo extends AbstractDemo
                 'title' => 'At the bar',
                 'cards' => [
                     ['title' => 'Yuzu highball · €10', 'text' => 'Japanese whisky, yuzu, soda and a pinch of sea salt.', 'file' => ['id' => $this->img( 'drinks' ), 'type' => 'file']],
-                    ['title' => 'Cold-brew sencha · €5', 'text' => 'Green tea steeped cold for eight hours and served over clear ice.', 'file' => ['id' => $this->img( 'counter' ), 'type' => 'file']],
-                    ['title' => 'Junmai sake · from €7', 'text' => 'A short rotating list poured by the glass, carafe or bottle.', 'file' => ['id' => $this->img( 'plates' ), 'type' => 'file']],
+                    ['title' => 'Cold-brew sencha · €5', 'text' => 'Green tea steeped cold for eight hours and served over clear ice.', 'file' => ['id' => $this->img( 'sencha' ), 'type' => 'file']],
+                    ['title' => 'Junmai sake · from €7', 'text' => 'A short rotating list poured by the glass, carafe or bottle.', 'file' => ['id' => $this->img( 'sake' ), 'type' => 'file']],
                 ],
             ]],
-            ['id' => Utils::uid(), 'type' => 'questions', 'group' => 'main', 'data' => [
+            ['id' => 'dietary-notes', 'type' => 'questions', 'group' => 'main', 'data' => [
                 'title' => 'Dietary notes',
                 'items' => [
                     ['title' => 'Which bowls are vegetarian?', 'text' => 'Roasted Tofu is fully plant-based. The seasonal bowl is vegetarian whenever the kitchen can build it without compromise; ask the team for the current version.'],
-                    ['title' => 'Can the noodles be made gluten-free?', 'text' => 'The broths can be served with rice instead of wheat noodles. The kitchen handles wheat throughout service, so the restaurant cannot promise a coeliac-safe environment.'],
+                    ['title' => 'What about gluten and other allergens?', 'text' => 'Broths can be served with rice instead of wheat noodles. Tell the counter team before ordering about egg, sesame, soy, allium or other allergies. The open kitchen handles all of them, so Sumi cannot promise a coeliac-safe or allergen-free meal.'],
                     ['title' => 'How spicy is Charred Miso?', 'text' => 'The standard bowl has a steady warmth rather than sharp heat. Extra fermented chili is served on the side.'],
                 ],
             ]],
@@ -183,7 +185,7 @@ class TasteDemo extends AbstractDemo
             ['id' => Utils::uid(), 'type' => 'hero', 'group' => 'main', 'data' => [
                 'title' => 'Your seat is closer than you think',
                 'subtitle' => 'Visit Sumi',
-                'text' => 'Walk in for counter seats or send a table request for groups of four or more. The kitchen serves the full menu until thirty minutes before closing.',
+                'text' => "Find us at Kastanienallee 48 in Prenzlauer Berg. Walk in for counter seats or send a table request for groups of four or more. The kitchen serves the full menu until thirty minutes before closing.",
                 'url' => '#table-request',
                 'button' => 'Request a table',
                 'url-alternative' => '/menu',
@@ -232,8 +234,8 @@ class TasteDemo extends AbstractDemo
                 'text' => 'Deep chicken broth, three misos and smoke from the grill.',
                 'features' => "- Charred pork shoulder\n- Sweet corn and cabbage\n- Marinated egg\n- Fermented chili",
                 'file' => ['id' => $this->img( 'miso' ), 'type' => 'file'],
-                'url' => '/visit',
-                'button' => 'Plan your visit',
+                'url' => '/menu#bowls',
+                'button' => 'View full menu',
                 'highlight' => true,
                 'badge' => 'House bowl',
             ],
@@ -243,8 +245,8 @@ class TasteDemo extends AbstractDemo
                 'text' => 'Clear chicken and kombu broth lifted with yuzu and sea salt.',
                 'features' => "- Braised pork\n- Scallions and sesame\n- Marinated egg\n- Yuzu peel",
                 'file' => ['id' => $this->img( 'broth' ), 'type' => 'file'],
-                'url' => '/visit',
-                'button' => 'Plan your visit',
+                'url' => '/menu#bowls',
+                'button' => 'View full menu',
             ],
             [
                 'name' => 'Roasted Tofu',
@@ -252,8 +254,8 @@ class TasteDemo extends AbstractDemo
                 'text' => 'A creamy plant broth with roasted tomato depth and sesame.',
                 'features' => "- Crisp tofu\n- Grilled peppers and greens\n- Lemon and seaweed\n- Black garlic oil",
                 'file' => ['id' => $this->img( 'tofu' ), 'type' => 'file'],
-                'url' => '/visit',
-                'button' => 'Plan your visit',
+                'url' => '/menu#bowls',
+                'button' => 'View full menu',
             ],
         ];
     }
@@ -269,10 +271,10 @@ class TasteDemo extends AbstractDemo
         if( !isset( $this->element ) )
         {
             $cards = [
-                ['title' => 'Sumi', 'text' => "A neighborhood noodle bar built around broth, live fire and a good seat at the counter."],
+                ['title' => 'Sumi', 'text' => "A Prenzlauer Berg noodle bar built around broth, live fire and a good seat at the counter."],
                 ['title' => 'Eat', 'text' => "- [Noodle and drinks menu](/menu)\n- [How the kitchen works](/kitchen)\n- [Dietary notes](/menu#dietary-notes)"],
                 ['title' => 'Visit', 'text' => "- [Opening hours and location](/visit)\n- [Send a table request](/visit#table-request)\n- +49 30 555 01 48"],
-                ['title' => 'Address', 'text' => "Kastanienallee 48\n10435 Berlin\n\nTuesday–Sunday"],
+                ['title' => 'Address', 'text' => "Kastanienallee 48\n10435 Berlin · Prenzlauer Berg\n\nTuesday–Sunday from 12:00"],
             ];
 
             $element = Element::forceCreate( [
@@ -341,8 +343,8 @@ class TasteDemo extends AbstractDemo
         $content = [
             ['id' => Utils::uid(), 'type' => 'hero', 'group' => 'main', 'data' => [
                 'title' => 'Broth, fire, and a seat at the counter',
-                'subtitle' => 'Sumi · Noodle bar and late kitchen',
-                'text' => 'Slow broth, springy noodles, small plates from the grill, and cold drinks mixed for the space between one bowl and the next.',
+                'subtitle' => 'Kastanienallee 48 · Prenzlauer Berg · Tue–Sun from 12:00',
+                'text' => 'Slow broth and springy ramen, grilled small plates and cold drinks in Prenzlauer Berg, from lunch through late counter seats.',
                 'url' => '/menu',
                 'button' => 'See the menu',
                 'url-alternative' => '/visit',
@@ -358,7 +360,7 @@ class TasteDemo extends AbstractDemo
                 'file' => ['id' => $this->img( 'counter' ), 'type' => 'file'],
                 'position' => 'grid-end',
                 'ratio' => '1-2',
-                'text' => "## A room made for dropping in\n\nThe counter is open for solo dinners, quick lunches and the extra bowl that follows a late drink. Tables sit close enough for sharing plates without turning the room formal.\n\nSumi cooks with Japanese technique and ingredients grown around Berlin. Broths run deep, garnishes stay bright, and the drinks list is short enough to read before your noodles arrive.\n\n[Meet the kitchen](/kitchen)",
+                'text' => "## A neighborhood room on Kastanienallee\n\nThe Prenzlauer Berg counter is open for solo dinners, quick lunches and the extra bowl that follows a late drink. Tables sit close enough for sharing plates without turning the room formal.\n\nSumi cooks with Japanese technique and ingredients grown around Berlin. Broths run deep, garnishes stay bright, and the drinks list is short enough to read before your noodles arrive.\n\n[Meet the kitchen](/kitchen)",
             ]],
             ['id' => Utils::uid(), 'type' => 'cards', 'group' => 'main', 'data' => [
                 'title' => 'Come when it suits you',
@@ -381,7 +383,7 @@ class TasteDemo extends AbstractDemo
                 'items' => [
                     ['title' => 'Do you keep tables for walk-ins?', 'text' => 'Yes. The counter and roughly half of the dining room remain available for walk-ins at every service.'],
                     ['title' => 'Can I reserve for a group?', 'text' => 'Table requests are accepted for four to sixteen guests. Send the date, time and group size through the visit page.'],
-                    ['title' => 'Is there a plant-based bowl?', 'text' => 'Roasted Tofu is fully plant-based, including the noodles and seasoning oil.'],
+                    ['title' => 'Is there a plant-based bowl?', 'text' => 'Roasted Tofu is fully plant-based, including the noodles and seasoning oil. For gluten, egg, sesame, soy or allium adjustments, ask the counter team before ordering.'],
                     ['title' => 'Do you serve takeaway?', 'text' => 'A limited number of bowls can be collected before 18:30. Broth and noodles are packed separately and should be combined at home.'],
                 ],
             ]],
@@ -390,12 +392,12 @@ class TasteDemo extends AbstractDemo
 
         $meta = [
             'meta-tags' => Validation::entry( 'meta-tags', [
-                'description' => 'Sumi is a modern Berlin noodle bar serving slow broth, grilled small plates, sake and highballs for lunch and late dinner.',
-                'keywords' => 'Sumi, Berlin noodle bar, ramen, restaurant, Japanese food, vegetarian noodles, sake, highballs',
+                'description' => "Sumi is a noodle bar on Kastanienallee in Berlin's Prenzlauer Berg, serving slow broth, grilled small plates, sake and highballs from lunch into late dinner.",
+                'keywords' => 'Sumi, noodle bar Berlin, ramen Prenzlauer Berg, Kastanienallee restaurant, Japanese food, vegetarian noodles, sake, highballs',
             ], 'meta' ),
             'social-media' => Validation::entry( 'social-media', [
-                'title' => 'Sumi | Noodle Bar and Late Kitchen in Berlin',
-                'description' => 'Slow broth, springy noodles, grilled small plates and cold drinks in a relaxed Berlin dining room.',
+                'title' => 'Sumi Noodle Bar | Prenzlauer Berg, Berlin',
+                'description' => "Slow broth, grilled small plates, sake and highballs on Kastanienallee in Berlin's Prenzlauer Berg.",
                 'file' => ['id' => $fileId, 'type' => 'file'],
             ], 'meta' ),
         ];
@@ -403,7 +405,7 @@ class TasteDemo extends AbstractDemo
         $page = Page::forceCreate( [
             'lang' => 'en',
             'name' => 'Home',
-            'title' => 'Sumi | Noodle Bar and Late Kitchen in Berlin',
+            'title' => 'Sumi Noodle Bar | Prenzlauer Berg, Berlin',
             'path' => '',
             'tag' => 'root',
             'theme' => $this->theme,
@@ -419,7 +421,7 @@ class TasteDemo extends AbstractDemo
             'lang' => 'en',
             'data' => [
                 'name' => 'Home',
-                'title' => 'Sumi | Noodle Bar and Late Kitchen in Berlin',
+                'title' => 'Sumi Noodle Bar | Prenzlauer Berg, Berlin',
                 'path' => '',
                 'tag' => 'root',
                 'domain' => '',
