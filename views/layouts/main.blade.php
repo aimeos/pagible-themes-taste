@@ -45,6 +45,19 @@
         <link href="{{ cmstheme($page, 'cms.css') }}" rel="stylesheet">
         @stack('head')
 
+        @php
+            $restaurant = $page->ancestorsAndSelf->reverse()
+                ->map(fn($item) => cms($item, 'config.taste::restaurant.data'))
+                ->first(fn($data) => $data);
+            $openingHours = collect((array) ($restaurant?->hours ?? []))->map(fn($hours) => [
+                '@type' => 'OpeningHoursSpecification',
+                'dayOfWeek' => 'https://schema.org/' . ($hours->day ?? ''),
+                'opens' => $hours->opens ?? '',
+                'closes' => $hours->closes ?? '',
+            ])->values()->all();
+            $cuisines = array_values(array_filter(array_map('trim', explode(',', (string) ($restaurant?->cuisine ?? '')))));
+        @endphp
+
         <script type="application/ld+json">
             [{
                 "@@context": "https://schema.org",
@@ -77,6 +90,26 @@
                         "name": {!! cmsjson(cms($page, 'name')) !!}
                     }
                 ]
+            }
+            @endif
+            @if($restaurant)
+            ,{
+                "@@context": "https://schema.org",
+                "@@type": "Restaurant",
+                "name": {!! cmsjson($restaurant->name ?? '') !!},
+                "url": {!! cmsjson(url('/')) !!},
+                "address": {
+                    "@@type": "PostalAddress",
+                    "streetAddress": {!! cmsjson($restaurant->{'street-address'} ?? '') !!},
+                    "postalCode": {!! cmsjson($restaurant->{'postal-code'} ?? '') !!},
+                    "addressLocality": {!! cmsjson($restaurant->locality ?? '') !!},
+                    "addressCountry": {!! cmsjson($restaurant->country ?? '') !!}
+                },
+                "servesCuisine": {!! cmsjson($cuisines) !!},
+                "openingHoursSpecification": {!! cmsjson($openingHours) !!},
+                "hasMenu": {!! cmsjson(url($restaurant->menu ?? '/menu')) !!},
+                "priceRange": {!! cmsjson($restaurant->{'price-range'} ?? '') !!},
+                "telephone": {!! cmsjson($restaurant->telephone ?? '') !!}
             }
             @endif
             ]

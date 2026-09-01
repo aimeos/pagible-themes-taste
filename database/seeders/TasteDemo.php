@@ -28,19 +28,49 @@ class TasteDemo extends AbstractDemo
     /**
      * Curated Unsplash photos used by the restaurant demo.
      *
-     * @var array<string, array{0: string, 1: string, 2: string}>
+     * @var array<string, array{0: string, 1: string, 2: array{en: string, de: string}}>
      */
     private const PHOTOS = [
-        'broth' => ['photo-1731460202531-bf8389d565f7', 'Citrus shio ramen', 'Overhead view of a clear noodle broth with egg, sliced meat, vegetables and sesame'],
-        'counter' => ['photo-1552566626-52f8b828add9', 'Sumi dining room', 'Warm contemporary restaurant dining room with timber tables and an open counter'],
-        'drinks' => ['photo-1551024709-8f23befc6f87', 'Sumi bar drinks', 'Citrus drinks with ice and fresh garnish at a softly lit restaurant bar'],
-        'fire' => ['photo-1781160327123-dbb1d77f70ae', 'Sumi open kitchen', 'Restaurant cook working beside stockpots in an open professional kitchen'],
-        'miso' => ['photo-1772217261042-0175d0b2fcb0', 'Charred miso ramen', 'Rich ramen with pork, noodles, egg, seaweed and aromatic broth'],
-        'sake' => ['photo-1756260853158-a63f71b4bff6', 'Junmai sake', 'Black Junmai sake bottle with a clear tasting glass on a dark table'],
-        'sencha' => ['photo-1767840272016-36dc5dd51f79', 'Cold-brew sencha', 'Clear green tea beside fresh sencha leaves in a glass pot on a wooden counter'],
-        'tofu' => ['photo-1769031240699-e15f4818224a', 'Roasted tofu ramen', 'Plant-based ramen with crisp tofu, vegetables, seaweed and citrus'],
-        'plates' => ['photo-1504674900247-0877df9cc836', 'Sumi sharing plates', 'Colorful small plates arranged for sharing across a restaurant table'],
-        'team' => ['photo-1764408182167-043042cb086e', 'Sumi kitchen team', 'Two restaurant cooks plating a bowl together at the kitchen pass'],
+        'broth' => ['photo-1731460202531-bf8389d565f7', 'Citrus shio ramen', [
+            'en' => 'Overhead view of a clear noodle broth with egg, sliced meat, vegetables and sesame',
+            'de' => 'Draufsicht auf eine klare Nudelsuppe mit Ei, Fleischscheiben, Gemüse und Sesam',
+        ]],
+        'counter' => ['photo-1552566626-52f8b828add9', 'Sumi dining room', [
+            'en' => 'Warm contemporary restaurant dining room with timber tables and an open counter',
+            'de' => 'Warmes modernes Restaurant mit Holztischen und einer offenen Theke',
+        ]],
+        'drinks' => ['photo-1551024709-8f23befc6f87', 'Sumi bar drinks', [
+            'en' => 'Citrus drinks with ice and fresh garnish at a softly lit restaurant bar',
+            'de' => 'Zitrusgetränke mit Eis und frischer Garnitur an einer sanft beleuchteten Restaurantbar',
+        ]],
+        'fire' => ['photo-1781160327123-dbb1d77f70ae', 'Sumi open kitchen', [
+            'en' => 'Restaurant cook working beside stockpots in an open professional kitchen',
+            'de' => 'Koch neben Suppentöpfen in einer offenen professionellen Restaurantküche',
+        ]],
+        'miso' => ['photo-1772217261042-0175d0b2fcb0', 'Charred miso ramen', [
+            'en' => 'Rich ramen with pork, noodles, egg, seaweed and aromatic broth',
+            'de' => 'Kräftige Ramen mit Schweinefleisch, Nudeln, Ei, Algen und aromatischer Brühe',
+        ]],
+        'sake' => ['photo-1756260853158-a63f71b4bff6', 'Junmai sake', [
+            'en' => 'Black Junmai sake bottle with a clear tasting glass on a dark table',
+            'de' => 'Schwarze Flasche Junmai-Sake mit klarem Probierglas auf einem dunklen Tisch',
+        ]],
+        'sencha' => ['photo-1767840272016-36dc5dd51f79', 'Cold-brew sencha', [
+            'en' => 'Clear green tea beside fresh sencha leaves in a glass pot on a wooden counter',
+            'de' => 'Klarer grüner Tee neben frischen Sencha-Blättern in einer Glaskanne auf einer Holztheke',
+        ]],
+        'tofu' => ['photo-1769031240699-e15f4818224a', 'Roasted tofu ramen', [
+            'en' => 'Plant-based ramen with crisp tofu, vegetables, seaweed and citrus',
+            'de' => 'Pflanzliche Ramen mit knusprigem Tofu, Gemüse, Algen und Zitrusfrüchten',
+        ]],
+        'plates' => ['photo-1504674900247-0877df9cc836', 'Sumi sharing plates', [
+            'en' => 'Colorful small plates arranged for sharing across a restaurant table',
+            'de' => 'Farbenfrohe kleine Gerichte zum Teilen auf einem Restauranttisch',
+        ]],
+        'team' => ['photo-1764408182167-043042cb086e', 'Sumi kitchen team', [
+            'en' => 'Two restaurant cooks plating a bowl together at the kitchen pass',
+            'de' => 'Zwei Köche richten gemeinsam eine Schale am Küchenpass an',
+        ]],
     ];
 
     private string $element;
@@ -237,7 +267,7 @@ class TasteDemo extends AbstractDemo
                 'url' => '/menu#bowls',
                 'button' => 'View full menu',
                 'highlight' => true,
-                'badge' => 'House bowl',
+                'badge' => 'House bowl · gluten-free option',
             ],
             [
                 'name' => 'Citrus Shio',
@@ -247,6 +277,7 @@ class TasteDemo extends AbstractDemo
                 'file' => ['id' => $this->img( 'broth' ), 'type' => 'file'],
                 'url' => '/menu#bowls',
                 'button' => 'View full menu',
+                'badge' => 'Gluten-free option',
             ],
             [
                 'name' => 'Roasted Tofu',
@@ -256,6 +287,7 @@ class TasteDemo extends AbstractDemo
                 'file' => ['id' => $this->img( 'tofu' ), 'type' => 'file'],
                 'url' => '/menu#bowls',
                 'button' => 'View full menu',
+                'badge' => 'Vegan · gluten-free option',
             ],
         ];
     }
@@ -338,22 +370,50 @@ class TasteDemo extends AbstractDemo
                 'files' => [$logoId],
                 'data' => ['file' => ['id' => $logoId, 'type' => 'file']],
             ],
+            'taste::restaurant' => [
+                'type' => 'taste::restaurant',
+                'files' => [],
+                'data' => [
+                    'name' => 'Sumi Noodle Bar',
+                    'street-address' => 'Kastanienallee 48',
+                    'postal-code' => '10435',
+                    'locality' => 'Berlin',
+                    'country' => 'DE',
+                    'cuisine' => 'Japanese, Ramen',
+                    'menu' => '/menu',
+                    'price-range' => '€€',
+                    'telephone' => '+49 30 555 01 48',
+                    'hours' => [
+                        ['id' => 'tue-lunch', 'day' => 'Tuesday', 'opens' => '12:00', 'closes' => '15:00'],
+                        ['id' => 'tue-dinner', 'day' => 'Tuesday', 'opens' => '17:30', 'closes' => '22:30'],
+                        ['id' => 'wed-lunch', 'day' => 'Wednesday', 'opens' => '12:00', 'closes' => '15:00'],
+                        ['id' => 'wed-dinner', 'day' => 'Wednesday', 'opens' => '17:30', 'closes' => '22:30'],
+                        ['id' => 'thu-lunch', 'day' => 'Thursday', 'opens' => '12:00', 'closes' => '15:00'],
+                        ['id' => 'thu-dinner', 'day' => 'Thursday', 'opens' => '17:30', 'closes' => '22:30'],
+                        ['id' => 'fri-lunch', 'day' => 'Friday', 'opens' => '12:00', 'closes' => '15:00'],
+                        ['id' => 'fri-dinner', 'day' => 'Friday', 'opens' => '17:30', 'closes' => '23:30'],
+                        ['id' => 'sat-lunch', 'day' => 'Saturday', 'opens' => '12:00', 'closes' => '15:00'],
+                        ['id' => 'sat-dinner', 'day' => 'Saturday', 'opens' => '17:30', 'closes' => '23:30'],
+                        ['id' => 'sun-lunch', 'day' => 'Sunday', 'opens' => '12:00', 'closes' => '16:00'],
+                    ],
+                ],
+            ],
         ];
 
         $content = [
             ['id' => Utils::uid(), 'type' => 'hero', 'group' => 'main', 'data' => [
                 'title' => 'Broth, fire, and a seat at the counter',
-                'subtitle' => 'Kastanienallee 48 · Prenzlauer Berg · Tue–Sun from 12:00',
+                'subtitle' => 'Walk in with 1–3 guests · Tue–Sun from 12:00',
                 'text' => 'Slow broth and springy ramen, grilled small plates and cold drinks in Prenzlauer Berg, from lunch through late counter seats.',
                 'url' => '/menu',
                 'button' => 'See the menu',
-                'url-alternative' => '/visit',
-                'button-alternative' => 'Plan your visit',
+                'url-alternative' => '/visit#table-request',
+                'button-alternative' => 'Group table requests',
                 'files' => [['id' => $this->img( 'miso' ), 'type' => 'file']],
             ]],
             ['id' => 'menu-highlights', 'type' => 'pricing', 'group' => 'main', 'data' => [
                 'title' => 'Three bowls, three moods',
-                'text' => 'The core menu stays short so the kitchen can give each broth the time it needs.',
+                'text' => 'The core menu stays short so the kitchen can give each broth the time it needs. Gluten-free options use rice instead of wheat noodles; the open kitchen is not coeliac-safe.',
                 'items' => $this->bowls(),
             ]],
             ['id' => Utils::uid(), 'type' => 'image-text', 'group' => 'main', 'data' => [
@@ -420,6 +480,7 @@ class TasteDemo extends AbstractDemo
         $version = $page->versions()->forceCreate( [
             'lang' => 'en',
             'data' => [
+                'lang' => 'en',
                 'name' => 'Home',
                 'title' => 'Sumi Noodle Bar | Prenzlauer Berg, Berlin',
                 'path' => '',
