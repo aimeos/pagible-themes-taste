@@ -136,6 +136,10 @@ footer.cms-content .cards .cms-text a {
     color: var(--pico-contrast-inverse);
 }
 
+footer.cms-content .cards .cms-text p {
+    color: inherit;
+}
+
 footer.cms-content .cards .title {
     margin-bottom: 1rem;
     font-size: 1rem;

@@ -41,6 +41,10 @@
     line-height: 1.65;
 }
 
+.hero .cms-text p {
+    color: inherit;
+}
+
 .hero .actions {
     display: flex;
     flex-wrap: wrap;
